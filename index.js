@@ -1,7 +1,7 @@
 /**
- * Accepts an array of methods/method names and will resolve their bindings in the "to" method.
+ * Accepts an array of methods/method names and will resolve their bindings in the "to()" method.
  *
- * @param {Array|String} methodsArray ~ An array of methods to bind, or optionally a string (if singular).
+ * @param {Array|String} methodsArray ~ An array of method names to bind, or optionally a string (if singular).
  *
  * ex:
  * array:  Bind(['foo', 'bar']).to(this);
