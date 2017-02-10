@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JoshuaCoquelle/react-bind.git"
+    "url": "git+https://github.com/JoshuaCoquelle/bind-react.git"
   },
   "author": "Joshua Coquelle - (joshuacoquelle@gmail.com)",
   "license": "MIT",
