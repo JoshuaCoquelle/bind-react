@@ -1,0 +1,16 @@
+{
+  "name": "bind-react",
+  "version": "1.0.0",
+  "description": "React.js helper module for keeping your method bindings clean",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaCoquelle/react-bind.git"
+  },
+  "author": "Joshua Coquelle - (joshuacoquelle@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoshuaCoquelle/bind-react/issues"
+  },
+  "homepage": "https://github.com/JoshuaCoquelle/bind-react#readme"
+}
