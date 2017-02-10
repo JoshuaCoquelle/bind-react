@@ -1,6 +1,6 @@
 {
   "name": "bind-react",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "React.js helper module for keeping your method bindings clean",
   "main": "index.js",
   "repository": {
