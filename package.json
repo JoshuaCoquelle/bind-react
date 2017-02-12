@@ -9,6 +9,13 @@
   },
   "author": "Joshua Coquelle - (joshuacoquelle@gmail.com)",
   "license": "MIT",
+  "keywords": [
+      "react",
+      "react-native",
+      "react scope",
+      "react bindings",
+      "react context"
+  ],
   "bugs": {
     "url": "https://github.com/JoshuaCoquelle/bind-react/issues"
   },

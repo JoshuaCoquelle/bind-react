@@ -1,4 +1,4 @@
-# Bind.js ~ bind-react
+# Bind.js ~ npm @ bind-react
 
 React.js helper module for keeping your method bindings clean.
 
@@ -15,8 +15,8 @@ Still doing this?
 constructor() {
 	// ...
     this.foo = this.foo.bind(this);
-    this.bar = this.bar.bind(this;
-    this.baz = this.bind(this);
+    this.bar = this.bar.bind(this);
+    this.baz = this.baz.bind(this);
 }
 ```
 
@@ -37,12 +37,36 @@ Before we do anything, lets import Bind into our project.
 import Bind from 'bind-react';
 ```
 
-Now, for the sake of simplicity, Bind() will accept an array of method string names, and bind that method collection to your desired context (typically your component).
+Now, for the sake of simplicity, Bind() will accept an array of strings containing the names of your method(s), then bind the collection to your desired context (typically your component).
 
-If you're only looking to bind one method to your component and don't want to dirty your JSX up with ``` foo={this.foo.bind(this)} ``` , Bind() can accept a single string parameter in its place.
+```js
+constructor() {
+    // ...
 
+    Bind(['loginHandler', 'signOutHandler']).to(this);
+}
 
-##### examples:
+loginHandler() {/* ... */}
+signOutHandler() {/* ... */}
+```
+
+Optionally, if your component only contains one method needing to be bound, Bind() will accept a single string parameter containing the method name instead of an array. This helps keep your JSX a little cleaner, rather than writing your bindings inline:
+
+```js
+<LoginButton loginHandler={this.loginHandler.bind(this)} />
+```
+Add to your constructor (or within anywhere containing your components scope):
+```js
+Bind('loginHandler').to(this);
+```
+
+and now you can assign your props a little cleaner:
+
+```js
+<LoginButton loginHandler={this.loginHandler} />
+```
+
+### examples overview:
 
 | ***String*** | limited to one method binding.
 ```js
@@ -52,12 +76,11 @@ class LoginForm extends Component {
       	// ...
       };
 
-      Bind('onLoginSuccess').to(this);
+      Bind('loginHandler').to(this);
   }
 
-  onLoginSucces()  { /* ... */ }
+  loginHandler()  { /* ... */ }
 }
-
 ```
 
 | ***Array*** | An array of method names in string format.
@@ -68,11 +91,11 @@ class LoginForm extends Component {
       	    // ...
         };
 
-        Bind(['onLoginSuccess, onLoginFailure']).to(this);
+        Bind(['loginHandler, signOutHandler']).to(this);
     }
 
-    onLoginSuccess()  { /* ... */ }
-    onLoginFailure() { /* ... */ }
+    loginHandler()  { /* ... */ }
+    signOutHandler() { /* ... */ }
 }
 
 ```
@@ -100,9 +123,9 @@ class LoginForm extends Component {
      */
     get methods() {
         return [
-            'onLoginSuccess',
-			'onLoginFailure',
-            'hasForgottenPassword'
+            'loginHandler',
+			'signOutHandler',
+            'forgotPasswordHandler'
         ];
     }
 }
