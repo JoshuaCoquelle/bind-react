@@ -124,7 +124,7 @@ class LoginForm extends Component {
     get methods() {
         return [
             'loginHandler',
-			'signOutHandler',
+	    'signOutHandler',
             'forgotPasswordHandler'
         ];
     }
